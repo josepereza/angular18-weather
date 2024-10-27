@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ![images](weather.png)
 
 ## Angular SSR Configuration Fix
-* Cuando trabajamos con Angular SSR y evitar este error al usar Bootstrap :
+* Cuando trabajamos con Angular SSR y evitar este error cuando hacemos un  --ng build-- al usar Bootstrap :
 ```
 [WARNING] 2 rules skipped due to selector errors:
   .form-floating>~label -> Did not expect successive traversals.
