@@ -2,7 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.6.
 ![images](weather.png)
+## Instalar Bootstrap en angular 18
+* Instala Bootstrap en tu proyecto
+```
+npm install bootstrap
+```
+* En el archivo styles.css de tu proyecto, añade:
+```
+@import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+```
+ 
 ## Angular SSR Configuration Fix
 * Cuando trabajamos con Angular SSR y evitar este error cuando hacemos un  --ng build-- al usar Bootstrap :
 ```
