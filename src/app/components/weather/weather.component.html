@@ -1,0 +1,61 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
+            <h2 class="text-center mb-0">Weather App</h2>
+          </div>
+          <div class="card-body">
+            <div class="mb-3">
+              <input 
+                [formControl]="cityInput"
+                (keyup.enter)="searchWeather()"
+                class="form-control"
+                placeholder="Enter city name..."
+              >
+            </div>
+            
+            @if (weatherData()) {
+              <div class="text-center">
+                <h3>{{ weatherData()?.location?.name }}, {{ weatherData()?.location?.country }}</h3>
+                <img [src]="'https:' + weatherData()?.current?.condition?.icon" 
+                     [alt]="weatherData()?.current?.condition?.text"
+                     class="my-3">
+                <div class="display-4">{{ weatherData()?.current?.temp_c }}°C</div>
+                <p class="lead">{{ weatherData()?.current?.condition?.text }}</p>
+                
+                <div class="row mt-4">
+                  <div class="col-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5>Humidity</h5>
+                        <p>{{ weatherData()?.current?.humidity }}%</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5>Wind</h5>
+                        <p>{{ weatherData()?.current?.wind_kph }} km/h</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5>Pressure</h5>
+                        <p>{{ weatherData()?.current?.pressure_mb }} mb</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            } @else {
+              <p class="text-center">Enter a city name to see the weather</p>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
